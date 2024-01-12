@@ -16,8 +16,7 @@ const Anecdotes = () => {
 
   const vote = (anecdote ) => {
     dispatch(updateAnecdote(anecdote))
-    dispatch(createNotification(`Voted for '${anecdote.content}'`))
-    setTimeout(() => {dispatch(createNotification(null))}, 5000)
+    dispatch(createNotification(`you voted '${anecdote.content}'`, 10))
   }
   
   const sortedAnecdotes = anecdotes.sort((a, b) => b.votes - a.votes)
