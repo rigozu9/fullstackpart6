@@ -11,7 +11,7 @@ const App = () => {
   const dispatch = useNotificationDispatch()
 
   const updateAnecdoteMutation = useMutation({mutationFn: updateAnecdote,
-    onSuccess: () => {
+    onSuccess: (updateAnecdote) => {
       queryClient.invalidateQueries('anecdotes')
     },
   })
